@@ -4,7 +4,7 @@ const output = fs.createWriteStream(path.join(__dirname, 'text.txt'));
 const { stdout, stdin, exit } = process;
 
 const exitProgram = () => {
-  stdout.write('Good bye!\n');
+  stdout.write('\nGood bye!\n');
   exit();
 };
 
