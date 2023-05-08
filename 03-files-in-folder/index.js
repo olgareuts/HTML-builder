@@ -12,7 +12,7 @@ fs.readdir(path.join(__dirname, 'secret-folder'), (error, files) => {
           console.log(error);
         } else {
           if (stats.isFile()) {
-            console.log(`${path.parse(filePath).name} - ${path.parse(filePath).ext.slice(1)} - ${(stats.size/1024)}kb`);
+            console.log(`${path.parse(filePath).name} - ${path.parse(filePath).ext.slice(1)} - ${stats.size}b`);
           }
         }
       });

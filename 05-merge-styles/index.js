@@ -13,11 +13,7 @@ fs.readdir(folderPath, { withFileTypes: true }, (error, files) => {
       const fileCopyPath = path.join(__dirname, 'styles', file.name);
       if (!file.isDirectory() && path.parse(fileCopyPath).ext === '.css') {
         fs.readFile(fileCopyPath, 'utf8', function(error, data) { 
-          if (error) {
-            console.log(error);
-          } else {
-            writeStream.write(data + '\n');
-          }
+          error ? console.log(error) : writeStream.write(data + '\n');
         });
       }
     });
