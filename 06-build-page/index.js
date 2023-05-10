@@ -63,7 +63,7 @@ function createHTML (templateFile, outputFile, componentsFolder) {
       console.log(error);
     } 
     let template = data;
-    const templateTags = data.match(/{{(.*)}}/gi);
+    const templateTags = data.match(/{{(.*?)}}/gi);
     templateTags.forEach(el => {
       const componentFileName = `${el.slice(2, -2)}.html`;
       const componentsPath = path.join(componentsFolder, componentFileName);
